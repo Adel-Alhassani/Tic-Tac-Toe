@@ -17,27 +17,33 @@ public class Board {
 
 
     public static void printBoard() {
+
         int count = 0;
         System.out.println();
+        System.out.print("    ");
 
         //print board content
         for (int i = 0; i < boardCells; i++) {
-            if (boardCells > 9) {
-                if (Board.board[i].length() > 5) {
-                    System.out.print("    " + board[i]);
-                } else {
-                    System.out.print("    " + board[i]);
-                }
-            } else {
-                System.out.print("    " + board[i]);
-            }
-            count++;
 
             //print new line
             if (count == Math.sqrt(boardCells)) {
                 System.out.println("\n");
+                System.out.print("    ");
                 count = 0;
             }
+
+            if (boardCells > 9) {
+                if (Board.board[i].length() > 3) {
+                    System.out.print(board[i]+"   ");
+                } else {
+                    System.out.print(board[i]+"    ");
+                }
+            }
+            else {
+                System.out.print(board[i]+"    ");
+            }
+            count++;
         }
+        System.out.println("\n");
     }
 }
