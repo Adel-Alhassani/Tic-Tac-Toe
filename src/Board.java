@@ -7,20 +7,20 @@ public class Board {
     public static String[] board = new String[boardCells];
 
     //initialize the board
-    public static void startBoard() {
+    public static void initBoard() {
 
-        //insert a values to board
+        //Insert the cells into the game board
         for (int i = 1; i <= boardCells; i++) {
-            board[i - 1] = "|_" + i + "_|";
+            board[i - 1] = "|" + i + "|";
         }
     }
 
 
-    public static void showBoard() {
+    public static void printBoard() {
         int count = 0;
         System.out.println();
 
-        //print board's values
+        //print board content
         for (int i = 0; i < boardCells; i++) {
             if (boardCells > 9) {
                 if (Board.board[i].length() > 5) {
