@@ -1,7 +1,7 @@
 
 public class Board {
 
-    //Number of board cells
+    //Number of board cells (9:3x3, 16:4x4,...)
     public static int boardCells = 9;
 
     public static String[] board = new String[boardCells];
@@ -15,32 +15,32 @@ public class Board {
         }
     }
 
-
     public static void printBoard() {
-
         int count = 0;
         System.out.println();
         System.out.print("    ");
 
-        //print board content
+        // Iterate over each cell in the board
         for (int i = 0; i < boardCells; i++) {
 
-            //print new line
+            // If we've printed a full row, start a new line and reset the count
             if (count == Math.sqrt(boardCells)) {
                 System.out.println("\n");
                 System.out.print("    ");
                 count = 0;
             }
 
+            // Determine how much padding to add to the cell value, based on the board size
             if (boardCells > 9) {
+
+                // Check if the cell value > 9, based on its length
                 if (Board.board[i].length() > 3) {
-                    System.out.print(board[i]+"   ");
+                    System.out.print(board[i] + "   ");
                 } else {
-                    System.out.print(board[i]+"    ");
+                    System.out.print(board[i] + "    ");
                 }
-            }
-            else {
-                System.out.print(board[i]+"    ");
+            } else {
+                System.out.print(board[i] + "    ");
             }
             count++;
         }

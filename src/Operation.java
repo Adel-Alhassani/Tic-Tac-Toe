@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Operation {
 
+    // Prompt the X-player to make a move
     public void addX() {
         Scanner in = new Scanner(System.in);
         while (true) {
@@ -29,6 +30,7 @@ public class Operation {
         }
     }
 
+    // Prompt the O-player to make a move
     public void addO() {
         Scanner in = new Scanner(System.in);
         while (true) {
@@ -71,16 +73,25 @@ public class Operation {
 
     public static final int BOARD_SIZE = (int) Math.sqrt(Board.boardCells);
 
+    // check if all the cells have the same symbol
     private boolean checkSequence(int[] indices) {
+
+        // Get the symbol of the first cell in the sequence
         String firstSymbol = Board.board[indices[0]];
+
+        // If the first symbol is a vertical bar, the sequence is invalid
         if (firstSymbol.equals(String.valueOf('|'))) {
             return false;
         }
+
+        // Check if all the cells in the sequence have the same symbol as the first cell
         for (int i = 1; i < indices.length; i++) {
             if (!Objects.equals(Board.board[indices[i]], firstSymbol)) {
                 return false;
             }
         }
+
+        // If all the cells have the same symbol, the sequence is valid
         return true;
     }
 
