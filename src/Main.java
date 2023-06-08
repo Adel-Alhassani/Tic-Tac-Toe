@@ -25,12 +25,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Operation op = new Operation();
+        TicTacToe game = new TicTacToe();
         Board.initBoard();
         Board.printBoard();
         while (true) {
-            op.addX();
-            if (op.checkWin()) {
+            game.addX();
+            if (game.checkWin()) {
                 System.out.println("------------ X-Player has won! ------------");
                 int id = getNum();
                 if (id == 1) {
@@ -40,7 +40,7 @@ public class Main {
                 }
                 break;
             }
-            if (op.checkDraw()) {
+            if (game.checkDraw()) {
                 int id = getNum();
                 if (id == 1) {
                     Board.initBoard();
@@ -49,8 +49,8 @@ public class Main {
                 }
                 break;
             }
-            op.addO();
-            if (op.checkWin()) {
+            game.addO();
+            if (game.checkWin()) {
                 System.out.println("------------ O-Player has won! ------------");
                 int id = getNum();
                 if (id == 1) {
@@ -60,7 +60,7 @@ public class Main {
                 }
                 break;
             }
-            if (op.checkDraw()) {
+            if (game.checkDraw()) {
                 int id = getNum();
                 if (id == 1) {
                     Board.initBoard();

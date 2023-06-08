@@ -1,7 +1,7 @@
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Operation {
+public class TicTacToe {
 
     // Prompt the X-player to make a move
     public void addX() {
